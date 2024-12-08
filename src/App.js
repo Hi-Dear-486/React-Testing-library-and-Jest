@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-function App() {
+const App = () => {
   const [values, setValues] = useState("");
   const [data, setData] = useState("");
   return (
@@ -21,6 +21,6 @@ function App() {
       <h2>{data}</h2>
     </>
   );
-}
+};
 
 export default App;
