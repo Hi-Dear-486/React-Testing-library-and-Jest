@@ -4,7 +4,11 @@ import App from "./App";
 test("renders learn react link", () => {
   render(<App />);
   const linkElement = screen.getByText(/First React test case/i);
-  const title = screen.getByTitle(/nature/i);
+  const checkInput = screen.getByRole("textbox");
   expect(linkElement).toBeInTheDocument();
-  expect(title).toBeInTheDocument();
+  expect(checkInput).toBeInTheDocument();
+  expect(checkInput).toHaveAttribute("name", "username");
+  expect(checkInput).toHaveAttribute("id", "userId");
+  expect(checkInput).toHaveAttribute("placeholder", "Enter userName");
+  expect(checkInput).toHaveAttribute("type", "text");
 });
