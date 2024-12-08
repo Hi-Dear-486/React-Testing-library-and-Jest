@@ -1,7 +1,23 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import App from "../App";
 
+// beforeAll(()=>{
+//   console.log("**********beforeall hooks ************")
+// })
+
+// beforeEach(() => {
+//   console.log("**********beforeEach hooks ************");
+// });
+
+afterAll(() => {
+  console.log("**********Afterall hooks ************");
+});
+
+afterAll(() => {
+  console.log("**********afterEach hooks ************");
+});
 test("renders learn react link", () => {
+  console.log("1");
   render(<App />);
   const linkElement = screen.getByText(/First React test case/i);
   const checkInput = screen.getByRole("textbox");
@@ -15,16 +31,19 @@ test("renders learn react link", () => {
 
 describe("Test for UI Elements", () => {
   test("test case 1", () => {
+    console.log("2");
     render(<App />);
     const linkElement = screen.getByText(/First React test case/i);
     expect(linkElement).toBeInTheDocument();
   });
   test("test case 2", () => {
+    console.log("3");
     render(<App />);
     const linkElement = screen.getByText(/First React test case/i);
     expect(linkElement).toBeInTheDocument();
   });
   test("test case 3", () => {
+    console.log("4");
     render(<App />);
     const linkElement = screen.getByText(/First React test case/i);
     expect(linkElement).toBeInTheDocument();
