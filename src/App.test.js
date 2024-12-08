@@ -12,3 +12,39 @@ test("renders learn react link", () => {
   expect(checkInput).toHaveAttribute("placeholder", "Enter userName");
   expect(checkInput).toHaveAttribute("type", "text");
 });
+
+describe("Test for UI Elements", () => {
+  test("test case 1", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/First React test case/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+  test("test case 2", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/First React test case/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+  test("test case 3", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/First React test case/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+});
+
+describe.skip("Test for API", () => {
+  test("test case 1", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/First React test case/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+  test("test case 2", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/First React test case/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+  test("test case 3", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/First React test case/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+});
