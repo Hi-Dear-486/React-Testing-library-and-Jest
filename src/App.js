@@ -17,7 +17,7 @@ function App() {
           onChange={(e) => setValues(e.target.value)}
         />
       </div>
-      <button onClick={() => setData("updata data")}>update</button>
+      <button onClick={() => setData("update data")}>update</button>
       <h2>{data}</h2>
     </>
   );
