@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import App from "./App";
 
 test("renders learn react link", () => {
@@ -28,6 +28,12 @@ describe("Test for UI Elements", () => {
     render(<App />);
     const linkElement = screen.getByText(/First React test case/i);
     expect(linkElement).toBeInTheDocument();
+  });
+  test("event fire", () => {
+    render(<App />);
+    let input = screen.getByRole("textbox");
+    fireEvent.change(input, { target: { value: "a" } });
+    expect(input.value).toBe("a");
   });
 });
 
