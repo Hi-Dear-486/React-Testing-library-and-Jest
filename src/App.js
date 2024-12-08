@@ -19,6 +19,7 @@ const App = () => {
       </div>
       <button onClick={() => setData("update data")}>update</button>
       <h2>{data}</h2>
+      <h2>snap shot testing</h2>
     </>
   );
 };
