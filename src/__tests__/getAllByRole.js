@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Multipleelements from "../Multipleelements";
-
+import Multipleelements from "../getAllByRole";
 test("getAllByRole", () => {
   render(<Multipleelements />);
   const btn = screen.getAllByRole("button");
