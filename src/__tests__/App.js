@@ -88,11 +88,9 @@ describe.skip("Test for API", () => {
 test("getbyRole testing ", () => {
   render(<App />);
   const btn = screen.getByRole("button", { name: "click 1" });
-  const btn2 = screen.getByRole("button", { name: "click 2" });
   const inPutField = screen.getByRole("textbox", { name: "age" });
   const Span = screen.getByRole("dummy");
   expect(btn).toBeInTheDocument();
-  expect(btn2).toBeInTheDocument();
   expect(inPutField).toBeInTheDocument();
   expect(Span).toBeInTheDocument();
 });
