@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, getByRole, render, screen } from "@testing-library/react";
 import App from "../App";
 
 // beforeAll(()=>{
@@ -20,7 +20,7 @@ test("renders learn react link", () => {
   console.log("1");
   render(<App />);
   const linkElement = screen.getByText(/First React test case/i);
-  const checkInput = screen.getByRole("textbox");
+  const checkInput = screen.getByRole("textbox", { name: "user Name" });
   expect(linkElement).toBeInTheDocument();
   expect(checkInput).toBeInTheDocument();
   expect(checkInput).toHaveAttribute("name", "username");
@@ -47,15 +47,15 @@ describe("Test for UI Elements", () => {
   });
   test("change event fire", () => {
     render(<App />);
-    let input = screen.getByRole("textbox");
+    let input = screen.getByRole("textbox", { name: "user Name" });
     fireEvent.change(input, { target: { value: "a" } });
     expect(input.value).toBe("a");
   });
 
   test("click event fire", () => {
     render(<App />);
-    let btn = screen.getByRole("button");
-    fireEvent.click(btn);
+    let btn1 = screen.getByRole("button", { name: "update" });
+    fireEvent.click(btn1);
     expect(screen.getByText("update data")).toBeInTheDocument();
   });
 });
@@ -78,7 +78,21 @@ describe.skip("Test for API", () => {
   });
 });
 
-test("snapshot for app component", () => {
-  const container = render(<App />);
-  expect(container).toMatchSnapshot();
+// end of the project
+// test("snapshot for app component", () => {
+//   const container = render(<App />);
+//   expect(container).toMatchSnapshot();
+// });
+
+// Multiple elements and Custom Role
+test("getbyRole testing ", () => {
+  render(<App />);
+  const btn = screen.getByRole("button", { name: "click 1" });
+  const btn2 = screen.getByRole("button", { name: "click 2" });
+  const inPutField = screen.getByRole("textbox", { name: "age" });
+  const Span = screen.getByRole("dummy");
+  expect(btn).toBeInTheDocument();
+  expect(btn2).toBeInTheDocument();
+  expect(inPutField).toBeInTheDocument();
+  expect(Span).toBeInTheDocument();
 });
