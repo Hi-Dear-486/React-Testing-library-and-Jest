@@ -23,6 +23,7 @@ const App = () => {
       <button onClick={() => setData("update data")}>update</button>
       <h2>{data}</h2>
       <h2>snap shot testing</h2>
+      <h2>snap shot test</h2>
 
       <button>click 1</button>
       <button>click 2</button>
